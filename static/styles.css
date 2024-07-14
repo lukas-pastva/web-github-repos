@@ -1,34 +1,39 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     color: #333;
 }
 
 header {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
-    padding: 2em;
+    padding: 3em 1em;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #4b8bec;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
-    letter-spacing: 1px;
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
-    margin: 0.5em 0 0;
-    font-size: 1.2em;
+    margin: 1em 0 0;
+    font-size: 1.5em;
 }
 
 main {
     padding: 2em;
-    max-width: 900px;
-    margin: 2em auto;
+    max-width: 1000px;
+    margin: 3em auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 ul {
@@ -37,50 +42,65 @@ ul {
 }
 
 li {
-    background: white;
+    background: #ffffff;
     margin: 1em 0;
-    padding: 1.5em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 li:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 2em;
+    color: #333;
 }
 
 p {
     margin: 0.5em 0 0;
-    font-size: 1em;
+    font-size: 1.2em;
     color: #666;
 }
 
 a {
-    color: #4CAF50;
+    color: #6a11cb;
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 a:hover {
-    color: #388E3C;
-    text-decoration: underline;
+    color: #2575fc;
+    border-bottom-color: #2575fc;
 }
 
 @media (max-width: 600px) {
     header {
-        padding: 1em;
+        padding: 2em 1em;
     }
 
     header h1 {
-        font-size: 1.8em;
+        font-size: 2.2em;
     }
 
     main {
-        padding: 1em;
+        padding: 1.5em;
+    }
+
+    li {
+        padding: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
     }
 }
