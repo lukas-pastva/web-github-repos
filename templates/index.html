@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>{{ heading }}</h1>
+        <p>{{ initial_text }}</p>
+    </header>
+    <main>
+        <ul>
+            {% for repo in repos %}
+                <li>
+                    <h2><a href="{{ repo.html_url }}">{{ repo.name }}</a></h2>
+                    <p>{{ repo.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
