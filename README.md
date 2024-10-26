@@ -1,4 +1,4 @@
-# web-webie
+# web-github-repos
 
 This project is a simple web application that displays public repositories of a specified GitHub user. The application is built using Flask and Docker, and it retrieves repository information via the GitHub API.
 
