@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page_title }}</title>
-    <link rel="stylesheet" href="/static/styles.css?cache=3">
+    <link rel="stylesheet" href="/static/styles.css?cache=4" />
 </head>
 <body>
     <header>
         <h1>{{ heading }}</h1>
         <p>{{ initial_text }}</p>
     </header>
+
     <main>
-        <ul>
+        <ul class="repo-grid">
             {% for repo in repos %}
-                <li>
-                    <h2><a href="{{ repo.html_url }}">{{ repo.name }}</a></h2>
-                    <p>{{ repo.description }}</p>
-                </li>
+            <li class="repo-card">
+                <h2><a href="{{ repo.html_url }}" target="_blank" rel="noopener">{{ repo.name }}</a></h2>
+                <p>{{ repo.description }}</p>
+
+                <div class="badges">
+                    <!-- ⭐ Stars -->
+                    <span class="badge" title="Stars">
+                        <!-- star icon -->
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                        {{ repo.stargazers_count }}
+                    </span>
+
+                    <!-- 👁 Subscribers / watchers -->
+                    <span class="badge" title="Subscribers">
+                        <!-- eye icon -->
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zM12 17a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
+                        </svg>
+                        {{ repo.subscribers_count }}
+                    </span>
+                </div>
+            </li>
             {% endfor %}
         </ul>
     </main>
